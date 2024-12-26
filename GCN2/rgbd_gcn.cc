@@ -91,22 +91,13 @@ int main(int argc, char **argv)
         }
 
 
-#ifdef COMPILEDWITHC11
-        std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
-#else
-        std::chrono::monotonic_clock::time_point t1 = std::chrono::monotonic_clock::now();
-#endif
+	std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 
         SLAM.TrackRGBD(imRGB,imD,tframe);
 
 
-#ifdef COMPILEDWITHC11
-        std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
-#else
-        std::chrono::monotonic_clock::time_point t2 = std::chrono::monotonic_clock::now();
-#endif
-
-        double ttrack = std::chrono::duration_cast<std::chrono::duration<double> >(t2 - t1).count();
+	std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
+	double ttrack = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1).count();
 
         vTimesTrack[ni]=ttrack;
 
