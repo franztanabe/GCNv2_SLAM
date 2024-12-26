@@ -3,6 +3,8 @@
 ## Introduction
 GCNv2 is a high-throughput variant of the Geometric Correspondence Network for performing RGB-D SLAM online on embedded platforms. We trained the binary descriptor in the same format with ORB (32 bytes) for the convenience of integration. In this implementation, we evaluate the motion estimation using a system built on top the [ORB-SLAM2], (https://github.com/raulmur/ORB_SLAM2). Thanks to the robustness of ORB-SLAM2, our system is able to achive reliable tracking perfomance on our drone platform in real-time. 
 
+Atualmente estou atualizando o algoritimo para o libtorch 2.0 + atualizei um numero consideravel de funcoes para suportar as configuracoes mais recentes de compilacao usando Cmake 14, no momento prreciso refazer e retreinar usando os mesmos descritores e extratores. no futuro espero criar o suporte para o ros2 tambem
+
 ## Example
 Online running performance with ORB and GCNv2 features:
 
